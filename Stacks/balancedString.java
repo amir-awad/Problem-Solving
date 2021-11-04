@@ -33,9 +33,14 @@ public class balancedString{
 				
 				if(input.charAt(i) == '[' || input.charAt(i) == '(' || input.charAt(i) == '{') s.push(input.charAt(i));
 				
-				else if((input.charAt(i) == ']'&& s.peek()!='[') || (input.charAt(i) == ')'&& s.peek()!='(') || (input.charAt(i) == '}'&& s.peek()!='{')) {
-					f = false;
-					break;
+				 else if(!s.isEmpty() && ((input.charAt(i) == ']'&& s.peek()!='[') || (input.charAt(i) == ')'&& s.peek()!='(') || (input.charAt(i) == '}'&& s.peek()!='{'))) {
+                       			 f = false;
+                       			 break;
+				 }
+                
+               			else if(s.isEmpty() && ((input.charAt(i) == ']') || (input.charAt(i) == ')') || (input.charAt(i) == '}'){))
+					   f = false;
+					    break;
 				}
 				
 			
