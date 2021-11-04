@@ -5,7 +5,7 @@ public class stackDecompose {
 
 	/* problem statement
 
-	You are required to implement a method public static ArrayStack decompose(ArrayStack x)
+	You are required to implement a method public static Stack<Integer> decompose(Stack<Integer> x)
 	where x is a stack of ints. The method is required to decompose the values stored in the stack x into two groups:
 		• values in the odd positions remain in the stack x
 		• values in the even positions should be stored in a new stack, say y
