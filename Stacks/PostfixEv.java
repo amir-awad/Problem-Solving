@@ -3,7 +3,16 @@ import java.util.Stack;
 import java.io.PrintWriter;
 
 public class PostfixEv {
+	
+	/* problem statement
 
+	Write a class PostfixEv.java that allows for the evaluation of postfix expressions using a static method
+	int evaluate(String s). Your evaluate method will be passed a string representing a postfix expressi-
+	on containing space-separated elements ("2 3 4 + *",etc.) and is required to evaluate the expression and return the
+	resulting value. The valid set of characters is {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, +, -, *, / }. Assume that that the syntax of
+	the postfix expression is correct. Make use of a stack to solve this problem.
+			
+	*/
 
 	public static int evaluate(String str){
 		String[] arr = str.split(" ");
