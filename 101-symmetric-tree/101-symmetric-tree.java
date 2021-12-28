@@ -22,7 +22,8 @@ class Solution {
 	public boolean isSymmetricRec(TreeNode right,TreeNode left){
 		if(right==null || left==null)
 			return right==null&&left==null;
-		if(left!=null&& right!=null&&left.val==right.val) return                                      true&&isSymmetricRec(right.left,left.right)&&isSymmetricRec(right.right, left.left);
+		if(left!=null&& right!=null&&left.val==right.val) 
+			return true&&isSymmetricRec(right.left,left.right)&&isSymmetricRec(right.right, left.left);
 		return false;
 	}
 }
