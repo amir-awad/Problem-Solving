@@ -12,16 +12,18 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
         
-        ListNode curr = head;
-        int n = (int)1e4+5;
+        HashSet<ListNode> hs = new HashSet<ListNode>();
+        ListNode curr=head;
         
-        while(n-->0){
-            if(curr==null)
-                return false;
+        while(curr!=null){
+            if(hs.contains(curr))
+                return true;
+            hs.add(curr);
             curr=curr.next;
         }
         
-        return true;
+        return false;
+        
     }
     
 }
