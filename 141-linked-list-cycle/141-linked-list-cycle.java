@@ -11,7 +11,7 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        
+        //put the addresses of nodes in a HashSet and check if we passed by any node twice
         HashSet<ListNode> hs = new HashSet<ListNode>();
         ListNode curr=head;
         
