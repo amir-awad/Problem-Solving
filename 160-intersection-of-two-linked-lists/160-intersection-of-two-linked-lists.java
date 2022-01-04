@@ -10,6 +10,11 @@
  * }
  */
 public class Solution {
+	// The idea is to put all the adresses of one LinkedList nodes in an HashSet or
+	//any other proper tool, then check if it has any address of the second linkedList nodes
+	// found it? return it
+	// else return null
+	
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         HashSet<ListNode> hs = new HashSet<ListNode>();
         ListNode curr1 = headA;
