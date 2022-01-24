@@ -36,10 +36,6 @@ class Solution {
             traversalNode = tmp;
             
         }
-        System.out.println(traversalNode.val);
-        System.out.println(openingNode.val);
-        System.out.println(preNode);
-        // System.out.println(postNode.val);
         
         if(preNode==null) head = traversalNode;
         traversalNode.next = openingNode;
