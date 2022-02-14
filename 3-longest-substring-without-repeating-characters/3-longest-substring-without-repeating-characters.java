@@ -26,14 +26,10 @@ class Solution {
 			
 			else{
 			
-				int i=0;
-				while(true){
-					if(str.charAt(i)==s.charAt(k))
-						break;
-					i++;
-				}
-				i++;
-				str = str.substring(i, str.length());
+				
+                while(str.contains(s.charAt(k)+"")){
+                    str = str.substring(1,str.length());
+                }
 			}
 
 			    str+=s.charAt(k);
