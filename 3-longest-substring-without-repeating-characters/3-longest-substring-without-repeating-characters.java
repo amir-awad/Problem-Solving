@@ -15,22 +15,20 @@ class Solution {
 			    if(str.charAt(str.length()-1)==s.charAt(k)){
 				    str = "";
 			    }
-                        
+
 			    else if(str.charAt(0)==s.charAt(k)){
 				if(str.length()>1){
 					str = str.substring(1, str.length());
 				}
 				else
 					str = "";
-			}
+				}
 			
-			else{
-			
+			    else{
+				while(str.contains(s.charAt(k)+""))
+				    str = str.substring(1,str.length());
 				
-                while(str.contains(s.charAt(k)+"")){
-                    str = str.substring(1,str.length());
-                }
-			}
+				}
 
 			    str+=s.charAt(k);
 			}
