@@ -35,7 +35,7 @@ class Solution {
 			
 		}
 		if(str.length()>res) res = str.length();
-		return res;
+		return res; //return the target string
 	    
 	}
 }
