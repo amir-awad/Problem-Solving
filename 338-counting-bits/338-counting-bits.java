@@ -1,4 +1,5 @@
 class Solution {
+    // using the idea of memoization
     static int[] memo;
     public int[] countBits(int n) {
         int[] arr = new int[n+1];
