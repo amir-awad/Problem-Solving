@@ -3,8 +3,12 @@ class Solution {
         int[] arr = new int[n+1];
         
         for(int i=0; i <= n; i++){
-            String s = Integer.toBinaryString(i);
-            arr[i] = count1s(s);
+            if(i!=0&&Math.log(i)%2==0)
+                arr[i] = 1;
+            else{
+                String s = Integer.toBinaryString(i);
+                arr[i] = count1s(s);
+            }
         }
         return arr;
     }
