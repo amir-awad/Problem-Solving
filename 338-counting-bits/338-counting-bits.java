@@ -1,24 +1,25 @@
 class Solution {
+    static int[] memo;
     public int[] countBits(int n) {
         int[] arr = new int[n+1];
-        
-        for(int i=0; i <= n; i++){
-            if(i!=0&&(Math.log(i)/Math.log(2))%2==0){
-                arr[i] = 1;
-            }
-            else{
-                String s = Integer.toBinaryString(i);
-                arr[i] = count1s(s);
-            }
+        memo = new int[n+1];
+        for(int i=0;i<=n;i++){
+            arr[i] = solve(i);
         }
         return arr;
     }
     
-    public static int count1s(String s){
-        int ans=0;
-        for(int i=0;i < s.length(); i++)
-            if(s.charAt(i)=='1')
-                ans++;
-        return ans;
+    public static int solve(int n){
+        if(n==0) return 0;
+        if(n==1||n==2)
+            return 1;
+        if(n==3)
+            return 2;
+        if(memo[n]!=0)
+            return memo[n];
+        if(n%2==0)
+            return memo[n] = solve(n/2);
+        
+        return memo[n] = 1 + solve(n/2);
     }
 }
