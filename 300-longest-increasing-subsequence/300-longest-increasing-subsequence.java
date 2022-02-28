@@ -10,7 +10,12 @@ class Solution {
                     length[k] = Math.max(length[k], length[i]+1);
             }
         }
-        Arrays.sort(length);
-        return length[nums.length-1];
+        int maxLen=length[0];
+        for(int i=1;i<length.length;i++){
+                if(length[i]>maxLen)
+                    maxLen=length[i];
+        }
+        
+        return maxLen;
     }
 }
