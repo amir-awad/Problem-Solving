@@ -24,7 +24,6 @@ class Solution {
             }
         }
         
-        // Print all prime numbers
         for (int i = 2; i <= n; i++) {
             if (prime[i] == true)
                 sieve[i] = 1;
