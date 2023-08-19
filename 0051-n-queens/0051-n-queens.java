@@ -18,9 +18,8 @@ class Solution {
             int col = state.get(i);
             // discard the column index if it's occupied by a queen
             candidates.remove(col);
-            int distance = position - i; // el distance between el current row wel el row of the placed queen
-            // discard diagonals: hna enta betsheel kol el cell that are attack diagonally
-            // with queens at row = i and column = col
+            int distance = position - i; // distance between the current row and the row of the placed queen
+            // discard diagonals
             candidates.remove(col + distance);
             candidates.remove(col - distance);
 
