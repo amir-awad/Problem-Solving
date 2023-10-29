@@ -1,33 +1,20 @@
 class Solution {
     public int[] pivotArray(int[] nums, int pivot) {
-        LinkedList<Integer> before = new LinkedList<>();
-        LinkedList<Integer> after = new LinkedList<>();
+        int n = nums.length;
+        int[] rearrangedArr = new int[n];
+        int left = 0;
+        int right = n - 1;
         
-        int pivotCount = 0;
-        for(int x : nums) {
-            if(x < pivot) {
-                before.addLast(x);
-            } else if(x == pivot) {
-                pivotCount++;
-            } else {
-                after.addLast(x);
+        for(int i = 0, j = n - 1; i < n; i++, j--) {
+            if(nums[i] < pivot) {
+                rearrangedArr[left++] = nums[i];
+            } if(nums[j] > pivot) {
+                rearrangedArr[right--] = nums[j];
             }
         }
         
-        int n = nums.length;
-        int[] rearrangedArr = new int[n];
-        
-        int i = 0;
-        while(!before.isEmpty()) {
-            rearrangedArr[i++] = before.removeFirst();
-        }
-        
-        while(pivotCount-- > 0) {
-            rearrangedArr[i++] = pivot;
-        }
-        
-        while(!after.isEmpty()) {
-            rearrangedArr[i++] = after.removeFirst();
+        while(left <= right) {
+            rearrangedArr[left++] = pivot;
         }
         
         return rearrangedArr;
