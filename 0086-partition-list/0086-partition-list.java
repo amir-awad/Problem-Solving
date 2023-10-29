@@ -17,6 +17,8 @@ class Solution {
         ListNode p1 = beforeDummyNode;
         ListNode p2 = afterDummyNode;
         while(curr != null) {
+            ListNode currNext = curr.next;
+            curr.next = null;
             if(curr.val < x) {
                 p1.next = curr;
                 p1 = p1.next;
@@ -25,13 +27,10 @@ class Solution {
                 p2 = p2.next;
             }
             
-            curr = curr.next;
+            curr = currNext;
         }
         
-        p2.next = null;
-        
         p1.next = afterDummyNode.next;
-        
         return beforeDummyNode.next;
     }
 }
