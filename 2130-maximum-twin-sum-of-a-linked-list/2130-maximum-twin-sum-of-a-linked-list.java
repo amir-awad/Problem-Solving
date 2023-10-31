@@ -42,9 +42,11 @@ class Solution {
         ListNode p1 = head;
         ListNode p2 = headOfReverse;
         
-        int maxTwinSum = Integer.MIN_VALUE;
+        int maxTwinSum = 0;
         while(p2 != null) {
-            maxTwinSum = Math.max(maxTwinSum, p1.val + p2.val);
+            if(maxTwinSum < p1.val + p2.val) {
+                maxTwinSum = p1.val + p2.val;
+            }
             p1 = p1.next;
             p2 = p2.next;
         }
